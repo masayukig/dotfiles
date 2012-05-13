@@ -1,0 +1,9 @@
+[user]
+	name = Masayuki Igawa
+	email = masayuki.igawa@gmail.com
+[color]
+	ui = auto
+[gui]
+	recentrepo = /Users/igawa/Documents/workspace/Simple-Massager
+[core]
+	quotepath = false
