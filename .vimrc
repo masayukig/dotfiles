@@ -22,6 +22,9 @@ Bundle 'tomasr/molokai'
 "Bundle 'thinca/vim-puickrun'
 Bundle 'thinca/vim-ref'
 Bundle 'kana/vim-fakeclip'
+Bundle 'depuracao/vim-rdoc'
+Bundle 'jnurmine/Zenburn'
+Bundle 'altercation/vim-colors-solarized'
 
 set tabstop=8
 set shiftwidth=8
@@ -36,14 +39,15 @@ set number
 
 syntax enable
 if has('gui_running')
-	set background=light
+	set background=dark
 else
 	set background=dark
 	"colorscheme desert256
 	colorscheme molokai
+	"colorscheme Zenburn
+	":let g:solarized_termcolors=256
+	"colorscheme solarized
 endif
-"colorscheme solarized
-":let g:solarized_termcolors=256
 
 
 
