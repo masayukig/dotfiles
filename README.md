@@ -6,6 +6,7 @@ These are my config files.
 - zsh
 - tmux
 - emacs
+- vim, gvim
 etc...
 
 # how to use #
