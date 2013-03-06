@@ -37,6 +37,8 @@ filetype indent on
 filetype plugin on
 set number
 
+set encoding=utf-8
+
 syntax enable
 if has('gui_running')
 	set background=dark
