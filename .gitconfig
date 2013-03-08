@@ -8,6 +8,7 @@
 [core]
 	quotepath = false
  excludesfile = /opt/boxen/config/git/gitignore
+	editor = /usr/bin/vim
 
 [hub]
 protocol = https
