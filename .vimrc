@@ -165,3 +165,6 @@ set colorcolumn=80
 " remap tag-jump
 nmap <c-h>	:pop<CR>
 " nnoremap <c-[>	:pop<CR>
+
+" 半透明にする
+set transparency=10
