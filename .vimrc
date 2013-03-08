@@ -186,3 +186,6 @@ inoremap \| \|\|<Left>
 """"""""" http://qiita.com/items/95b8a7a0d007e6e09d78
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge""""
+
+" 半透明にする
+set transparency=10
