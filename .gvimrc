@@ -9,3 +9,7 @@ set columns=120
 
 " 半透明にする
 set transparency=10"
+
+" 自動的に日本語入力(IM)をオンにする機能を有効にするには
+set noimdisableactivate
+
