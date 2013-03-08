@@ -13,4 +13,6 @@ for dotfile in .?*; do
 			;;
 	esac
 done
+OS=`uname`
+ln -Fis "$PWD/.gitconfig.$OS" $HOME/.gitconfig.os
 

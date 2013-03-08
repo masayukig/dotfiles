@@ -13,5 +13,5 @@
 [hub]
 protocol = https
 
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
+[include]
+path = .gitconfig.os
