@@ -6,3 +6,6 @@ colorscheme molokai
 set lines=40
 " 横幅　デフォルトは80
 set columns=120
+
+" 半透明にする
+set transparency=10"
