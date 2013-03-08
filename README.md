@@ -1,4 +1,5 @@
-# dotfiles #
+dotfiles
+========
 
 These are my config files.
 
@@ -7,9 +8,10 @@ These are my config files.
 - tmux
 - emacs
 - vim, gvim
-etc...
+- etc...
 
-# how to use #
+how to use
+==========
 
     $ cd some/local/directory
     $ git clone git://github.com/masayukig/dotfiles.git
