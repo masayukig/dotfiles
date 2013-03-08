@@ -3,12 +3,12 @@ filetype off
 " call pathogen#runtime_append_all_bundles()
 " call pathogen#helptags()
 " set helpfile=$VIMRUNTIME/doc/help.txt
- 
+
 """ Vundle '''
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 filetype plugin on
- 
+
 " 利用中のプラグインをBundle
 Bundle 'gmarik/vundle'
 Bundle 'Shougo/neocomplcache'
@@ -160,5 +160,25 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " highlight 80th column
 set colorcolumn=80
 
+"inoremap <C-c> <ESC>
 " remap tag-jump
-nmap <c-[>  :pop<CR>
+nnoremap <c-h>  :pop<CR>
+
+"""" http://qiita.com/items/9ca3fa0c4c00d7e70cbb
+" adjust the window height/width
+" nnoremap <space>+ <C-w>5+
+" nnoremap <space>- <C-w>5-
+" nnoremap <space>> <C-w>10>
+" nnoremap <space>< <C-w>10<
+
+" complete surroundings
+inoremap ' ''<Left>
+inoremap " ""<Left>
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap \| \|\|<Left>
+
+""""""""" http://qiita.com/items/95b8a7a0d007e6e09d78
+" 保存時に行末の空白を除去する
+autocmd BufWritePre * :%s/\s\+$//ge""""
