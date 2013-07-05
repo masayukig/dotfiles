@@ -25,6 +25,10 @@ Bundle 'kana/vim-fakeclip'
 Bundle 'depuracao/vim-rdoc'
 Bundle 'jnurmine/Zenburn'
 Bundle 'altercation/vim-colors-solarized'
+"
+" for jedi-vim
+Bundle 'davidhalter/jedi-vim'
+Bundle 'jmcantrell/vim-virtualenv'
 
 set tabstop=8
 set shiftwidth=8
