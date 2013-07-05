@@ -41,3 +41,4 @@ eval "$(rbenv init -)"
 rbenv shell 2.0.0-p0
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 export PATH=$HOME/.pythonz/pythons/CPython-2.7.3/bin:$PATH
+export PYTHONSTARTUP=$HOME/.pythonrc.py
