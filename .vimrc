@@ -190,3 +190,14 @@ inoremap \| \|\|<Left>
 """"""""" http://qiita.com/items/95b8a7a0d007e6e09d78
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge""""
+
+"""""""" 無限undoと編集位置の自動復帰
+"""""""" http://blog.papix.net/entry/2012/12/14/042937
+if has('persistent_undo')
+	set undodir=~/.vim/undo
+	set undofile
+endif
+
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\""
+
+
