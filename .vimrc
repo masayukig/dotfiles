@@ -30,6 +30,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'jmcantrell/vim-virtualenv'
 
+set spell
 set tabstop=8
 set shiftwidth=8
 "set expandtab
