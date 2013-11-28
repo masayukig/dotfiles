@@ -9,9 +9,16 @@
 	quotepath = false
  excludesfile = /opt/boxen/config/git/gitignore
 	editor = /usr/bin/vim
+	pager = less
+	attributesfile = ~/.gitattributes_global
 
 [hub]
 protocol = https
 
 [include]
 path = .gitconfig.os
+
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
