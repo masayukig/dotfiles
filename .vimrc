@@ -18,6 +18,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-abolish'
 Bundle 'tomasr/molokai'
 "Bundle 'thinca/vim-puickrun'
 Bundle 'thinca/vim-ref'
@@ -30,6 +31,13 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'jmcantrell/vim-virtualenv'
 
+" http://qiita.com/PSP_T/items/3a1af1301ee197b32a8a
+Bundle 'osyo-manga/vim-over'
+Bundle 'LeafCage/yankround.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'syui/wauto.vim'
+
+set spell
 set tabstop=8
 set shiftwidth=8
 "set expandtab
@@ -73,6 +81,10 @@ let g:neocomplcache_dictionary_filetype_lists = {
 "Q. How can I open a NERDTree automatically when vim starts up if no files
 "were specified?
 autocmd vimenter * if !argc() | NERDTree | endif
+
+" pycファイルを表示しない
+let NERDTreeIgnore = ['\.pyc$']
+
 
 """ neocomplecache
 " Disable AutoComplPop.
@@ -190,3 +202,29 @@ inoremap \| \|\|<Left>
 """"""""" http://qiita.com/items/95b8a7a0d007e6e09d78
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge""""
+
+"""""""" 無限undoと編集位置の自動復帰
+"""""""" http://blog.papix.net/entry/2012/12/14/042937
+if has('persistent_undo')
+	set undodir=~/.vim/undo
+	set undofile
+endif
+
+" yankround.vim
+"" キーマップ
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+"" 履歴取得数
+let g:yankround_max_history = 50
+""履歴一覧(kien/ctrlp.vim)
+nnoremap <silent>g<C-p> :<C-u>CtrlPYankRound<CR>
+
+"" wauto.vim
+nmap <Leader>s  <Plug>(AutoWriteStart)
+nmap <Leader>ss <Plug>(AutoWriteStop)
+let g:auto_write = 1
+
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\""
+
