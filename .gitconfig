@@ -1,13 +1,13 @@
 [user]
 	name = Masayuki Igawa
-	email = masayuki.igawa@gmail.com
+	email = igawa@mxs.nes.nec.co.jp
 [color]
 	ui = auto
 [gui]
 	recentrepo = /Users/igawa/Documents/workspace/Simple-Massager
 [core]
 	quotepath = false
- excludesfile = /opt/boxen/config/git/gitignore
+ 	excludesfile = ~/.gitignore
 	editor = /usr/bin/vim
 	pager = less
 	attributesfile = ~/.gitattributes_global

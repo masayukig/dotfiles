@@ -164,3 +164,6 @@ alias cgrep="grep --color=always"
 # PS1="${PS1//\\w/\\w\$(__git_ps1)}"
 
 source ~/.bash-git-prompt/gitprompt.sh
+export PATH=${PATH}:${HOME}/bin
+export PATH=${PATH}:${HOME}/pycharm/bin
+
