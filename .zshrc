@@ -40,5 +40,9 @@ eval "$(rbenv init -)"
 
 rbenv shell 2.0.0-p0
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-export PATH=$HOME/.pythonz/pythons/CPython-2.7.5/bin:/usr/local/mysql/bin:/usr/local/opt/postgresql/bin:$HOME/bin:$PATH
+export PATH=$HOME/.pythonz/pythons/CPython-2.7.5/bin:/usr/local/mysql/bin:/usr/local/opt/postgresql/bin:$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH=$PATH:$HOME/adt-bundle-latest/sdk/platform-tools
+export PATH=$PATH:$HOME/apktool
 export PYTHONSTARTUP=$HOME/.pythonrc.py
+#alias greadline readline
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"

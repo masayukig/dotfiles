@@ -178,6 +178,9 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " highlight 80th column
 set colorcolumn=80
 
+" spell checker
+set spell
+
 "inoremap <C-c> <ESC>
 " remap tag-jump
 nmap <c-h>	:pop<CR>
