@@ -47,7 +47,17 @@
 ;;; 強力な補完機能を使う
 ;;; p-bでprint-bufferとか
 ;;(load "complete")
-(partial-completion-mode 1)
+;; 24では、デフォルト有効らしい
+;;(partial-completion-mode t)
+;; 部分一致の補完機能を使う
+;; p-bでprint-bufferとか
+;; 2012-08-08
+;; Emacs 24ではデフォルトで有効になっていて、`partial-completion-mode'は
+;; なくなっている。カスタマイズする場合は以下の変数を変更する。
+;;   * `completion-styles'
+;;   * `completion-pcm-complete-word-inserts-delimiters'
+(if (fboundp 'partial-completion-mode)
+    (partial-completion-mode t))
 
 ;;; 補完可能なものを随時表示
 ;;; 少しうるさい
@@ -185,27 +195,40 @@
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 ;(my-c-mode-hook)
 
+;; https://github.com/clear-code/emacs.d/blob/master/init.el
+;;; 履歴
+;; 履歴数を大きくする
+(setq history-length 1000)
+;; ミニバッファの履歴を保存する
+(savehist-mode 1)
+;; 最近開いたファイルを保存する数を増やす
+(setq recentf-max-saved-items 1000)
+
+;; CommandとOptionを入れ替える
+;; http://qiita.com/usobuku/items/39342e2a4137dde894b4
+(setq ns-command-modifier (quote meta))
+(setq ns-alternate-modifier (quote super))
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; for scala-mode
 ;; http://d.hatena.ne.jp/tototoshi/20100925/1285420294
 ;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/.emacs.d/scala-mode")
-(require 'scala-mode-auto)
+;; (add-to-list 'load-path "~/.emacs.d/scala-mode")
+;; (require 'scala-mode-auto)
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(display-time-mode t)
- '(show-paren-mode t)
- '(transient-mark-mode t))
- (custom-set-faces
-;;   ;; custom-set-faces was added by Custom.
-;;   ;; If you edit it by hand, you could mess it up, so be careful.
-;;   ;; Your init file should contain only one such instance.
-;;   ;; If there is more than one, they won't work right.
-;;  '(default ((t (:inherit nil :stipple nil :background "#ffffff" :foreground "#1a1a1a" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 88 :width normal :foundry "unknown" :family "IPA \343\203\242\343\203\212\343\203\274 \343\202\264\343\202\267\343\203\203\343\202\257")))))
-  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 88 :width normal :foundry "unknown" :family "IPA \343\203\242\343\203\212\343\203\274 \343\202\264\343\202\267\343\203\203\343\202\257")))))
+ '(show-paren-mode t))
+ 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 88 :width normal :foundry "unknown" :family "IPA \343\203\242\343\203\212\343\203\274 \343\202\264\343\202\267\343\203\203\343\202\257")))))
