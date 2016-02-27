@@ -2,3 +2,5 @@
 *~
 .gitconfig.os
 .idea
+.project
+.pydevproject

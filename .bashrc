@@ -166,4 +166,10 @@ alias cgrep="grep --color=always"
 source ~/.bash-git-prompt/gitprompt.sh
 export PATH=${PATH}:${HOME}/bin
 export PATH=${PATH}:${HOME}/pycharm/bin
+export LESS='-R'
+export LESSOPEN='| $HOME/bin/src-hilite-lesspipe.sh %s'
+export LD_LIBRARY_PATH="/usr/local/lib"
+if [ "$TERM" == "xterm" ]; then
+	export TERM=xterm-256color
+fi
 
