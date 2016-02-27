@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -x
 cd $(dirname $0)
 for dotfile in .?*; do
 	case $dotfile in
