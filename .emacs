@@ -29,7 +29,7 @@
    (set-frame-parameter nil 'alpha 90)
    ))
 
-;; 無駄な空行に気付きやすくする 
+;; 無駄な空行に気付きやすくする
 (setq-default indicate-empty-lines t)
 
 ;; 対応する括弧を表示
@@ -195,6 +195,14 @@
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 ;(my-c-mode-hook)
 
+; http://qiita.com/tukiyo3/items/86bec536da566cec8acd
+;;tramp
+(add-to-list 'load-path "~/emacs/tramp/lisp/")
+(require 'tramp)
+
+;; w3m
+(require 'w3m-load)
+
 ;; https://github.com/clear-code/emacs.d/blob/master/init.el
 ;;; 履歴
 ;; 履歴数を大きくする
@@ -225,7 +233,7 @@
  '(column-number-mode t)
  '(display-time-mode t)
  '(show-paren-mode t))
- 
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
