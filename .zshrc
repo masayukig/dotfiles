@@ -45,6 +45,7 @@ export PATH=$PATH:$HOME/adt-bundle-latest/sdk/platform-tools
 export PATH=$PATH:$HOME/apktool
 export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-darwin/
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
+export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 export PATH=/usr/local/bin:$PATH
 
 export PYTHONSTARTUP=$HOME/.pythonrc.py
@@ -52,3 +53,36 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PKG_CONFIG_PATH=/usr/local/Cellar/libffi/3.0.11/lib/pkgconfig
 export DOCKER_HOST=tcp://localhost:2375
+
+if ! type _get_comp_words_by_ref >/dev/null 2>&1; then
+_get_comp_words_by_ref ()
+{
+    local exclude cur_ words_ cword_
+    if [ "$1" = "-n" ]; then
+        exclude=$2
+        shift 2
+    fi
+    cur_=${words_[cword_]}
+    while [ $# -gt 0 ]; do
+        case "$1" in
+        cur)
+            cur=$cur_
+            ;;
+        prev)
+            prev=${words_[$cword_-1]}
+            ;;
+        words)
+            words=("${words_[@]}")
+            ;;
+        cword)
+            cword=$cword_
+            ;;
+        esac
+        shift
+    done
+}
+fi
+autoload bashcompinit
+bashcompinit
+source $HOME/.zsh/completion/tempest-completion.bash
+

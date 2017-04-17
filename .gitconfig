@@ -1,10 +1,9 @@
 [user]
 	name = Masayuki Igawa
-	email = masayuki.igawa@gmail.com
+	email = masayuki@igawa.me
+	username = masayukig
 [color]
 	ui = auto
-[gui]
-	recentrepo = /Users/igawa/Documents/workspace/Simple-Massager
 [core]
 	quotepath = false
 	excludesfile = ~/.gitignore
@@ -41,3 +40,7 @@ path = .gitconfig.os
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[diff]
+	compactionHeuristic = true
+[commit]
+	gpgsign = true

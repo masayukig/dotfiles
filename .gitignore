@@ -13,3 +13,9 @@ ehthumbs.db
 .idea
 .project
 .pydevproject
+.~lock.jobs.odg#
+.vscode
+*.bak
+
+.boartty.yaml
+.gertty.yaml
