@@ -1,4 +1,6 @@
-#!/bin/bash -x
+#!/usr/bin/env bash
+
+set -x
 cd $(dirname $0)
 for dotfile in .?*; do
 	case $dotfile in
