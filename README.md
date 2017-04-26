@@ -47,3 +47,12 @@ gnupg
     $ gpg --import public.asc
     $ gpg --import secret.asc
     $ gpg --import-ownertrust trust.txt
+
+Gertty
+------
+
+    $ git clone https://review.openstack.org/openstack/gertty git/openstack/gertty
+    $ scp .gertty.db .gertty.yaml $IP_ADDRESS:/home/$USER/
+    $ sudo pip install -e git/openstack/gertty
+
+
