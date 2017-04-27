@@ -44,3 +44,5 @@ path = .gitconfig.os
 	compactionHeuristic = true
 [commit]
 	gpgsign = true
+[gitreview]
+	username = igawa
