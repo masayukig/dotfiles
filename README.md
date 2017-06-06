@@ -55,4 +55,8 @@ Gertty
     $ scp .gertty.db .gertty.yaml $IP_ADDRESS:/home/$USER/
     $ sudo pip install -e git/openstack/gertty
 
+Conky
+-----
 
+    $ sudo zypper install conky
+    $ git clone https://github.com/zenzire/conkyrc.git ~/.conky
