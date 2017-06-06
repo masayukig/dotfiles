@@ -217,6 +217,28 @@
 (setq ns-command-modifier (quote meta))
 (setq ns-alternate-modifier (quote super))
 
+;; for Mew
+;; https://www.mew.org/ja/info/release/mew_1.html#Overview
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
+(autoload 'mew "mew" nil t)
+(autoload 'mew-send "mew" nil t)
+
+;; Optional setup (Read Mail menu):
+(setq read-mail-command 'mew)
+
+;; Optional setup (e.g. C-xm for sending a message):
+(autoload 'mew-user-agent-compose "mew" nil t)
+(if (boundp 'mail-user-agent)
+    (setq mail-user-agent 'mew-user-agent))
+(if (fboundp 'define-mail-user-agent)
+    (define-mail-user-agent
+      'mew-user-agent
+      'mew-user-agent-compose
+      'mew-draft-send-message
+      'mew-draft-kill
+      'mew-send-hook))
+
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; for scala-mode
 ;; http://d.hatena.ne.jp/tototoshi/20100925/1285420294
