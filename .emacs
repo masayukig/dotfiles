@@ -1,4 +1,5 @@
 (set-language-environment "Japanese")
+(prefer-coding-system 'utf-8)
 
 (global-set-key "\C-h" 'backward-delete-char)
 
@@ -41,8 +42,32 @@
 ;;; 終了時にオートセーブファイルを消す
 (setq delete-auto-save-files t)
 
+;;; do not create auto-save file;;;
+(setq auto-save-default nil)
+
 ;;; 補完時に大文字小文字を区別しない
 (setq completion-ignore-case t)
+
+;;; auto line feed settings
+;;; http://somemo.hatenablog.com/entry/2012/05/01/140505
+(setq fill-column 80)
+(setq text-mode-hook 'turn-on-auto-fill)
+(setq default-major-mode 'text-mode)
+
+(defun turn-on-auto-fill ()
+  "Unconditionally turn on Auto Fill mode."
+  (auto-fill-mode 1))
+
+(defun turn-off-auto-fill ()
+  "Unconditionally turn off Auto Fill mode."
+  (auto-fill-mode -1))
+
+(custom-add-option 'text-mode-hook 'turn-on-auto-fill)
+;;; 0: immediately
+;;; nil: none
+(setq fill-column 0)
+;(setq fill-column nil)
+
 
 ;;; 強力な補完機能を使う
 ;;; p-bでprint-bufferとか
@@ -217,8 +242,13 @@
 (setq ns-command-modifier (quote meta))
 (setq ns-alternate-modifier (quote super))
 
+;; hl-line-mode
+(global-hl-line-mode 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; for Mew
 ;; https://www.mew.org/ja/info/release/mew_1.html#Overview
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 (autoload 'mew "mew" nil t)
 (autoload 'mew-send "mew" nil t)
@@ -237,6 +267,21 @@
       'mew-draft-send-message
       'mew-draft-kill
       'mew-send-hook))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; for Neotree
+;; https://www.emacswiki.org/emacs/NeoTree
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/git/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-smart-open t)
+
+
+;; put line number on left side
+(global-linum-mode t)
+;; reserve for 5 digits
+(setq linum-format "%5d ")
 
 
 ;;;;;;;;;;;;;;;;;;;;;
