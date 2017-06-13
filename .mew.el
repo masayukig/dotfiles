@@ -97,6 +97,7 @@
 (setq mew-use-master-passwd t)
 
 (setq mew-imap-trash-folder "%Archive")
+(setq mew-fcc "%Sent")
 
 (provide '.mew)
 ;;; .mew.el ends here
