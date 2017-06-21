@@ -17,6 +17,7 @@ ehthumbs.db
 .~lock.jobs.odg#
 .vscode
 *.bak
+__pycache__/
 
 .boartty.yaml
 .gertty.yaml
