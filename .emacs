@@ -42,6 +42,40 @@
 ;;; 終了時にオートセーブファイルを消す
 (setq delete-auto-save-files t)
 
+;;; delete-trailing-whitespace when saving
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; ;;; Highlight trailing whitespace
+(setq-default show-trailing-whitespace t)
+
+;; ;;; Highlight tabs
+;; (add-hook 'font-lock-mode-hook
+;;           (lambda ()
+;;             (font-lock-add-keywords
+;;              nil
+;;              '(("\t" 0 'trailing-whitespace prepend)))))
+
+;; ;;; disable-trailing-mode
+;; ;;; http://qiita.com/tadsan/items/df73c711f921708facdc
+;; (defun my/disable-trailing-mode-hook ()
+;;   "Disable show tail whitespace."
+;;   (setq show-trailing-whitespace nil))
+
+;; (defvar my/disable-trailing-modes
+;;   '(comint-mode
+;;     eshell-mode
+;;     eww-mode
+;;     term-mode
+;;     mew-draft-mode
+;;     ))
+
+;; (mapc
+;;  (lambda (mode)
+;;    (add-hook (intern (concat (symbol-name mode) "-hook"))
+;;              'my/disable-trailing-mode-hook))
+;;  my/disable-trailing-modes)
+
+
 ;;; do not create auto-save file;;;
 (setq auto-save-default nil)
 
