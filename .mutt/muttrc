@@ -212,6 +212,9 @@ color  body            brightwhite     red     "^gpg: BAD signature from.*"
 mono   body            bold                    "^gpg: Good signature"
 mono   body            bold                    "^gpg: BAD signature from.*"
 
+# http://archive.linux.or.jp/JF/JFdocs/Mutt-GnuPG-PGP-HOWTO-6.html
+
+
 # Various smilies and the like
 color body brightwhite default "<[Gg]>"                            # <g>
 color body brightwhite default "<[Bb][Gg]>"                        # <bg>
@@ -225,3 +228,9 @@ mono  body underline           "(^|[[:space:][:punct:]])_[^_]+_([[:space:][:punc
 
 # Border lines.
 color body blue default "( *[-+=#*~_]){6,}"
+
+# crypt gpg/pgp
+set crypt_use_gpgme=yes
+set crypt_replysign=yes
+set crypt_replysignencrypted=yes
+set pgp_timeout=3600
