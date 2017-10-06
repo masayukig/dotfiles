@@ -19,6 +19,7 @@ ehthumbs.db
 .vscode
 *.bak
 __pycache__/
+.#*
 
 .boartty.yaml
 .gertty.yaml
