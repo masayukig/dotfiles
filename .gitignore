@@ -9,6 +9,7 @@ Thumbs.db
 ehthumbs.db
 *.swp
 *~
+.#*
 .gitconfig.os
 *.swo
 .idea
