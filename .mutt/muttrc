@@ -7,7 +7,9 @@ set editor = "emacsclient -nw -a ''"
 
 # Gmail-style keyboard shortcuts ----------------------
 macro index,pager y "<enter-command>unset trash\n <delete-message>" "Gmail archive message"
-macro index,pager d "<enter-command>set trash=\"imaps://imap.fastmail.com:993/Archive/\"\n <delete-message>" "Archive message"
+#macro index,pager d "<enter-command>set trash=\"imaps://imap.fastmail.com:993/Archive/\"\n <delete-message>" "Archive message"
+set trash = '+Archive'
+macro index,pager d "<delete-message>" "Archive message"
 bind pager g noop
 bind index g noop
 macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"
@@ -47,7 +49,8 @@ set sort_aux = 'reverse-last-date-received'
 set auto_tag = yes
 set connect_timeout = 60
 set reverse_name = yes
-#set from = "masayuki@igawa.io"
+set trash = '+Archive'
+set from = "masayuki@igawa.io"
 alternates "(^masayuki@igawa\.me$|^masayuki\.igawa@gmail\.com$|^masayuki\.igawa@suse.com$)"
 ignore "Authentication-Results:"
 ignore "DomainKey-Signature:"
