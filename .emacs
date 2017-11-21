@@ -134,6 +134,14 @@
 (define-key global-map "\C-\\" nil) ; \C-\の日本語入力の設定を無効にする
 (define-key global-map "\C-c " 'other-frame)         ; フレーム移動
 
+;;; set indentation for javascript
+;;; https://qiita.com/sawamur@github/items/1eeacf63551c1215a1cd
+(setq js-indent-level 2)
+
+;;; untabify
+;;; https://www.emacswiki.org/emacs/NoTabs
+(setq-default indent-tabs-mode nil)
+
 ;;; カーソルの点滅を止める
 (blink-cursor-mode 0)
 
