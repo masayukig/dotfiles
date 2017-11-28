@@ -30,7 +30,7 @@ how to use
     $ less README.md # install .zprezto
 
     # To use diff-highlight
-    $ curl https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight > ~/bin/diff-highlight && chmod +x ~/bin/diff-highlight
+    $ sudo pip install diff-highlight
     # To use vim plugins
     $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     $ vim +PluginInstall +qall
