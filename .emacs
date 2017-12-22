@@ -372,7 +372,7 @@
  '(column-number-mode t)
  '(delete-selection-mode nil)
  '(display-time-mode t)
- '(package-selected-packages (quote (popwin google-translate marmalade-demo ##)))
+ '(package-selected-packages (quote (magit popwin google-translate marmalade-demo ##)))
  '(show-paren-mode t))
 
 
@@ -380,7 +380,17 @@
 ;; Marmalade package setting
 ;; https://marmalade-repo.org/#httpsinstructions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Melpa package setting (for magit)
+;; https://magit.vc/manual/magit/Installing-from-an-Elpa-Archive.html#Installing-from-an-Elpa-Archive
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+;; key bindings
+;; https://magit.vc/manual/magit/Editing-commit-messages.html
+;; C-c C-c     (with-editor-finish)
+;; C-c C-k     (with-editor-cancel)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Popwin
