@@ -1,3 +1,10 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (set-language-environment "Japanese")
 (prefer-coding-system 'utf-8)
 
@@ -262,6 +269,29 @@
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 ;(my-c-mode-hook)
 
+(add-hook 'python-mode-hook
+          (lambda ()
+            (flyspell-prog-mode
+             )))
+(add-hook 'text-mode-hook
+          (lambda ()
+            (flyspell-prog-mode
+             )))
+
+
+;; THIS DOESN'T WORK SO FAR...
+;; ;; load python-mode
+;; ;; https://qiita.com/ynakayama/items/e5ec9b53ae6eeec4fa6e
+;; (when (autoload 'python-mode "python-mode" "Python editing mode." t)
+;;   ;; Enable python-pep8 keybinds when python-mode is on
+;;   (setq python-mode-hook
+;;         (function (lambda ()
+;;                     (local-set-key "\C-c\ p" 'python-pep8))))
+;;   (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+;;   (setq interpreter-mode-alist (cons '("python" . python-mode)
+;;                                      interpreter-mode-alist)))
+
+
 ; http://qiita.com/tukiyo3/items/86bec536da566cec8acd
 ;;tramp
 (add-to-list 'load-path "~/emacs/tramp/lisp/")
@@ -340,8 +370,44 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
+ '(delete-selection-mode nil)
  '(display-time-mode t)
+ '(package-selected-packages (quote (popwin google-translate marmalade-demo ##)))
  '(show-paren-mode t))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Marmalade package setting
+;; https://marmalade-repo.org/#httpsinstructions
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Popwin
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+(setq popwin:popup-window-position 'bottom)
+
+;; This doesn't work so far... :(
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;; google-translate
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (require 'google-translate)
+
+;; (global-set-key "\C-xt" 'google-translate-at-point)
+;; (global-set-key "\C-xT" 'google-translate-query-translate)
+
+;; ;; Set the default languages of translation (en -> ja)
+;; ;; disable by C-u
+;; (custom-set-variables
+;;  '(google-translate-default-source-language "en")
+;;  '(google-translate-default-target-language "ja"))
+
+;; ;; Use popwin google-translate.el buffer
+;; (push '("*Google Translate*") popwin:special-display-config)
+
+
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
