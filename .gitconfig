@@ -6,7 +6,7 @@
 [core]
 	quotepath = false
 	excludesfile = ~/.gitignore
-	editor = /usr/bin/vim
+	editor = emacs
 	pager = less
 	attributesfile = ~/.gitattributes_global
 
