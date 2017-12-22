@@ -6,7 +6,7 @@
 [core]
 	quotepath = false
 	excludesfile = ~/.gitignore
-	editor = emacs
+	editor = emacs -nw
 	pager = less
 	attributesfile = ~/.gitattributes_global
 
