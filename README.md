@@ -60,3 +60,10 @@ Conky
 
     $ sudo zypper install conky
     $ git clone https://github.com/zenzire/conkyrc.git ~/.conky
+
+Emacs packages
+--------------
+
+    (In a emcas environment)
+    M-x package-refresh-contents
+    M-x package-install FOO
