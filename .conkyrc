@@ -102,9 +102,9 @@ ${goto 40}Load:${alignr 39}${loadavg}
 #${voffset 20}
 ${goto 40}${cpugraph 10,190 FFFFFF FFFFFF -l}
 ${goto 40}Cpu:${alignr 39}${cpu}%
-${goto 40}Temp: 0: ${hwmon 4 temp 1}°C, 1: ${hwmon 4 temp 2}°C, 2: ${hwmon 4 temp 3}°C, 3: ${hwmon 4 temp 4}°C
+${goto 40}Temp: 0: ${hwmon 3 temp 1}°C, 1: ${hwmon 3 temp 2}°C, 2: ${hwmon 3 temp 3}°C #, 3: ${hwmon 3 temp 4}°C
 ${goto 40}Freq: ${freq} MHz
-${goto 40}Fans: CPU: ${if_existing /sys/class/hwmon/hwmon2/fan1_input}${hwmon 2 fan 1}, GPU: ${hwmon 2 fan 2}${else}${hwmon 3 fan 1}, GPU: ${hwmon 3 fan 2}${endif} RPM #, Temp: ${platform fan}
+# ${goto 40}Fans: CPU: ${if_existing /sys/class/hwmon/hwmon2/fan1_input}${hwmon 2 fan 1}, GPU: ${hwmon 2 fan 2}${else}${hwmon 3 fan 1}, GPU: ${hwmon 3 fan 2}${endif} RPM #, Temp: ${platform fan}
 
 ${goto 40}${memgraph 10,190 FFFFFF FFFFFF -l}
 ${goto 40}Mem:${alignr 39}${memperc}%
@@ -123,15 +123,15 @@ ${hr 2}
 # \
 # Network
 \
-${if_existing /proc/net/route wlp2s0}
-${goto 40}${upspeedgraph wlp2s0 26,80 FFFFFF FFFFFF}${goto 150}${downspeedgraph wlp2s0 26,80 FFFFFF FFFFFF}
-${goto 40}${color5}Up: ${color2}${upspeed wlp2s0}${color5}${goto 150}Down: ${color2}${downspeed wlp2s0}
-${goto 40}${color5}Sent: ${color2}${totalup wlp2s0}${color5}${goto 150}Received: ${color2}${totaldown wlp2s0}
+${if_existing /proc/net/route wlp4s0}
+${goto 40}${upspeedgraph wlp4s0 26,80 FFFFFF FFFFFF}${goto 150}${downspeedgraph wlp4s0 26,80 FFFFFF FFFFFF}
+${goto 40}${color5}Up: ${color2}${upspeed wlp4s0}${color5}${goto 150}Down: ${color2}${downspeed wlp4s0}
+${goto 40}${color5}Sent: ${color2}${totalup wlp4s0}${color5}${goto 150}Received: ${color2}${totaldown wlp4s0}
 ${endif}
-${if_existing /proc/net/route eth0}
-${goto 40}${upspeedgraph eth0 26,80 FFFFFF FFFFFF}${goto 150}${downspeedgraph eth0 26,80 FFFFFF FFFFFF}
-${goto 40}${color5}Up: ${color2}${upspeed eth0}${color5}${goto 150}Down: ${color2}${downspeed eth0}
-${goto 40}${color5}Sent: ${color2}${totalup eth0}${color5}${goto 150}Received: ${color2}${totaldown eth0}
+${if_existing /proc/net/route enp0s31f6}
+${goto 40}${upspeedgraph enp0s31f6 26,80 FFFFFF FFFFFF}${goto 150}${downspeedgraph enp0s31f6 26,80 FFFFFF FFFFFF}
+${goto 40}${color5}Up: ${color2}${upspeed enp0s31f6}${color5}${goto 150}Down: ${color2}${downspeed enp0s31f6}
+${goto 40}${color5}Sent: ${color2}${totalup enp0s31f6}${color5}${goto 150}Received: ${color2}${totaldown enp0s31f6}
 ${endif}
 ${hr 2}
 \
