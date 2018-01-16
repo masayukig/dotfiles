@@ -50,7 +50,6 @@ set sort_aux = 'reverse-last-date-received'
 set auto_tag = yes
 set connect_timeout = 60
 set reverse_name = yes
-set trash = '+Archive'
 set from = "masayuki@igawa.io"
 alternates "(^masayuki@igawa\.me$|^masayuki\.igawa@gmail\.com$|^masayuki\.igawa@suse.com$)"
 ignore "Authentication-Results:"

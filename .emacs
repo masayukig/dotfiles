@@ -349,6 +349,40 @@
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; https://github.com/domtronn/all-the-icons.el
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;(add-to-list 'load-path "~/git/all-the-icons.el")
+;;(require 'all-the-icons)
+;; or
+;; (use-package all-the-icons)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; markdown-mode
+;; https://jblevins.org/projects/markdown-mode/
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (require 'package)
+;; (add-to-list 'package-archives
+;;              '("melpa-stable" . "https://stable.melpa.org/packages/"))
+;; (package-initialize)
+
+;; (use-package markdown-mode
+;;              :ensure t
+;;              :commands (markdown-mode gfm-mode)
+;;              :mode (("README\\.md\\'" . gfm-mode)
+;;                     ("\\.md\\'" . markdown-mode)
+;;                     ("\\.markdown\\'" . markdown-mode))
+;;              :init (setq markdown-command "multimarkdown"))
+(add-to-list 'load-path "~/git/markdown-mode")
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(autoload 'gfm-mode "markdown-mode"
+  "Major mode for editing GitHub Flavored Markdown files" t)
+(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+
 
 ;; put line number on left side
 (global-linum-mode t)
