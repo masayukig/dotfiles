@@ -7,10 +7,13 @@ set editor = "emacsclient -nw -a ''"
 
 # Gmail-style keyboard shortcuts ----------------------
 #macro index,pager y "<enter-command>unset trash\n <delete-message>" "Gmail archive message"
-macro index,pager d "<enter-command>set trash=\"imaps://imap.fastmail.com:993/Archive/\"\n <delete-message>" "Archive message"
+#macro index,pager d "<enter-command>set trash=\"imaps://imap.fastmail.com:993/Archive/\"\n <delete-message>" "Archive message"
 #macro index,pager d "<move-message>+Archive<enter><sync-mailbox>" "move message to the Archive"
-set trash = '+Archive'
+macro index,pager d "<save-message>+Archive<enter><sync-mailbox><delete-message><enter>"
+set trash='+Trash'
 #macro index,pager d "<delete-message>" "Archive message"
+#bind index,pager d delete-message
+#bind index,pager D purge-message
 bind pager g noop
 bind index g noop
 macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"
