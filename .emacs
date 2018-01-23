@@ -9,6 +9,7 @@
 (prefer-coding-system 'utf-8)
 
 (global-set-key "\C-h" 'backward-delete-char)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 (transient-mark-mode 1)
 
@@ -297,6 +298,21 @@
 (add-to-list 'load-path "~/emacs/tramp/lisp/")
 (require 'tramp)
 
+;; Feel time flies
+;; https://qiita.com/zk_phi/items/11a419911db861b9211e
+;; https://github.com/zk-phi/sky-color-clock
+
+(add-to-list 'load-path "~/git/sky-color-clock")
+(require 'sky-color-clock)
+(sky-color-clock-initialize 35) ;; initialize with Tokyo latitude
+;; Add sky-color-clock to mode-line-format
+(push '(:eval (sky-color-clock)) (default-value 'mode-line-format))
+;; Moon age
+(setq sky-color-clock-enable-emoji-icon t)
+(sky-color-clock-initialize-openweathermap-client "2c62cc715ee5bfc78647b7b3874a5202" 1850144)
+(setq sky-color-clock-enable-temperature-indicator t)
+
+
 ;; w3m
 (require 'w3m-load)
 
@@ -361,7 +377,6 @@
 ;; markdown-mode
 ;; https://jblevins.org/projects/markdown-mode/
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (require 'package)
 ;; (add-to-list 'package-archives
 ;;              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 ;; (package-initialize)
@@ -406,9 +421,16 @@
  '(column-number-mode t)
  '(delete-selection-mode nil)
  '(display-time-mode t)
- '(package-selected-packages (quote (magit popwin google-translate marmalade-demo ##)))
+ '(package-selected-packages (quote (popwin magit popwin google-translate marmalade-demo ##)))
  '(show-paren-mode t))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; https://github.com/magit/magit/issues/1479
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'git-commit-setup-hook
+          (lambda ()
+            (add-hook 'with-editor-pre-finish-hook
+                      'git-commit-save-message nil t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Marmalade package setting
