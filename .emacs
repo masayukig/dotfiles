@@ -421,9 +421,14 @@
  '(column-number-mode t)
  '(delete-selection-mode nil)
  '(display-time-mode t)
- '(package-selected-packages (quote (popwin magit popwin google-translate marmalade-demo ##)))
+ '(package-selected-packages
+   (quote
+    (yaml-mode ag magit popwin google-translate marmalade-demo ##)))
  '(show-paren-mode t))
 
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
+(define-key yaml-mode-map "\C-m" 'newline-and-indent)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; https://github.com/magit/magit/issues/1479
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
