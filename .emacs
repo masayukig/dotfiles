@@ -479,6 +479,13 @@
 ;; (push '("*Google Translate*") popwin:special-display-config)
 
 
+;; xterm-mouse-mode
+(unless (fboundp 'track-mouse)
+  (defun track-mouse (e)))
+(xterm-mouse-mode t)
+(require 'mouse)
+(require 'mwheel)
+(mouse-wheel-mode t)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
