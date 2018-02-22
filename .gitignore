@@ -24,3 +24,5 @@ __pycache__/
 .gertty.yaml
 *.pyc
 .venv/
+
+package-lock.json
