@@ -12,6 +12,7 @@ These are my config files.
 
 how to use
 ==========
+::
 
     $ cd some/local/directory
     $ git clone git://github.com/masayukig/dotfiles.git
@@ -37,6 +38,7 @@ how to use
 
 gnupg
 -----
+::
 
     $ gpg --export -a > public.asc
     $ gpg --export-secret-keys -a > secret.asc
@@ -50,6 +52,7 @@ gnupg
 
 Gertty
 ------
+::
 
     $ git clone https://review.openstack.org/openstack/gertty git/openstack/gertty
     $ scp .gertty.db .gertty.yaml $IP_ADDRESS:/home/$USER/
@@ -57,12 +60,14 @@ Gertty
 
 Conky
 -----
+::
 
     $ sudo zypper install conky
     $ git clone https://github.com/zenzire/conkyrc.git ~/.conky
 
 Emacs packages
 --------------
+::
 
     (In a emcas environment)
     M-x package-refresh-contents
