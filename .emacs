@@ -423,7 +423,7 @@
  '(display-time-mode t)
  '(package-selected-packages
    (quote
-    (yaml-mode ag magit popwin google-translate marmalade-demo ##)))
+    (dockerfile-mode yaml-mode ag magit popwin google-translate marmalade-demo ##)))
  '(show-paren-mode t))
 
 (require 'yaml-mode)
@@ -478,6 +478,12 @@
 ;; ;; Use popwin google-translate.el buffer
 ;; (push '("*Google Translate*") popwin:special-display-config)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Dockerfile-mode
+;;; https://github.com/spotify/dockerfile-mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'dockerfile-mode)
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
 ;; xterm-mouse-mode
 (unless (fboundp 'track-mouse)
