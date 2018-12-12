@@ -6,9 +6,9 @@
 [core]
 	quotepath = false
 	excludesfile = ~/.gitignore
-	editor = emacsclient -nw -a \"\"
 	pager = less
 	attributesfile = ~/.gitattributes_global
+	editor = vim -c \"set fenc=utf-8\"
 
 [hub]
 protocol = https
