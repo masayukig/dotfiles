@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -423,7 +422,7 @@
  '(display-time-mode t)
  '(package-selected-packages
    (quote
-    (dockerfile-mode yaml-mode ag magit popwin google-translate marmalade-demo ##)))
+    (multiple-cursors dockerfile-mode yaml-mode ag magit popwin google-translate marmalade-demo ##)))
  '(show-paren-mode t))
 
 (require 'yaml-mode)
@@ -492,6 +491,20 @@
 (require 'mouse)
 (require 'mwheel)
 (mouse-wheel-mode t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; multiple cursors                                                       ;;
+;; https://github.com/magnars/multiple-cursors.el
+;; http://pragmaticemacs.com/emacs/multiple-cursors/
+;; http://emacsrocks.com/e13.html
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c m c") 'mc/edit-lines)
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
