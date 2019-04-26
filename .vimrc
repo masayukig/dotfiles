@@ -38,11 +38,36 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'syui/wauto.vim'
 
 set spell
-set tabstop=8
-set shiftwidth=8
-"set expandtab
+set tabstop=4
+set shiftwidth=4
+set expandtab
 set nocompatible
 "call pathogen#infect()
+set softtabstop=0
+
+set list
+set listchars=tab:»-
+
+if has("autocmd")
+  " https://qiita.com/ymiyamae/items/06d0f5ce9c55e7369e1f
+  filetype plugin on
+  filetype indent on
+  autocmd FileType c           setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType yaml	       setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType js          setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType zsh         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType python      setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scala       setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType sh          setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType json        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType css         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scss        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType sass        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
+endif
 syntax on
 filetype on
 filetype indent on

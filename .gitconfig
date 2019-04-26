@@ -1,8 +1,8 @@
 [user]
 	username = masayukig
 	useConfigOnly = true
-	email = masayuki@igawa.io
 	name = Masayuki Igawa
+	email = masayuki@igawa.io
 [color]
 	ui = auto
 [core]
