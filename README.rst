@@ -27,7 +27,8 @@ how to use
     $ git clone https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
     $ cd .zprezto
     $ git remote add masayukig git@github.com:masayukig/prezto.git
-    $ git checkout masayukig change-prompt
+    $ git fetch masayukig
+    $ git checkout masayukig/change-prompt
     $ less README.md # install .zprezto
 
     # To use diff-highlight
