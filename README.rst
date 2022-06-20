@@ -36,6 +36,8 @@ how to use
     # To use vim plugins
     $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     $ vim +PluginInstall +qall
+    # To use vim molokai colorscheme
+    $ git clone https://github.com/tomasr/molokai ~/.vim/colors
 
 gnupg
 -----
