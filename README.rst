@@ -46,9 +46,9 @@ gnupg
     $ gpg --export -a > public.asc
     $ gpg --export-secret-keys -a > secret.asc
     $ gpg --export-ownertrust > trust.txt
-    $ scp public.asc secret.asc trust.txt $HOST2:/home/masayukig/.gnupg/
+    $ scp public.asc secret.asc trust.txt ${NEW_HOST}:/home/masayukig/.gnupg/
 
-    on $HOST2
+    on $NEW_HOST
     $ gpg --import public.asc
     $ gpg --import secret.asc
     $ gpg --import-ownertrust trust.txt
@@ -58,7 +58,7 @@ Gertty
 ::
 
     $ git clone https://review.openstack.org/openstack/gertty git/openstack/gertty
-    $ scp .gertty.db .gertty.yaml $IP_ADDRESS:/home/$USER/
+    $ scp .gertty.db .gertty.yaml ${NEW_HOST}:/home/${USER}/
     $ sudo pip install -e git/openstack/gertty
 
 Conky
