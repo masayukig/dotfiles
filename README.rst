@@ -75,3 +75,16 @@ Emacs packages
     (In a emcas environment)
     M-x package-refresh-contents
     M-x package-install FOO
+
+Gnome settings
+--------------
+::
+
+    # https://askubuntu.com/questions/492595/terminal-in-gnome-3-disable-audible-bell-enable-visual-bell
+    # Disable audible bell and enable visual bell with:
+    $ gsettings set org.gnome.desktop.wm.preferences audible-bell false
+    $ gsettings set org.gnome.desktop.wm.preferences visual-bell true
+
+    # change the type of the visual bell if you don't need the fullscreen flash:
+    $ gsettings set org.gnome.desktop.wm.preferences visual-bell-type frame-flash
+
