@@ -1,8 +1,10 @@
 [user]
-	username = masayukig
+    #username = masayukig
+    username = migawa
 	useConfigOnly = true
 	name = Masayuki Igawa
-	email = masayuki@igawa.io
+    #email = masayuki@igawa.io
+	email = migawa@redhat.com
 [color]
 	ui = auto
 [core]
@@ -44,3 +46,7 @@ path = .gitconfig.os
 	gpgsign = true
 [gitreview]
 	username = igawa
+[init]
+	defaultBranch = main
+[safe]
+	directory = /etc
