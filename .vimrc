@@ -9,33 +9,34 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 filetype plugin on
 
-" 利用中のプラグインをBundle
-Bundle 'gmarik/vundle'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-abolish'
-Bundle 'tomasr/molokai'
-"Bundle 'thinca/vim-puickrun'
-Bundle 'thinca/vim-ref'
-Bundle 'kana/vim-fakeclip'
-Bundle 'depuracao/vim-rdoc'
-Bundle 'jnurmine/Zenburn'
-Bundle 'altercation/vim-colors-solarized'
+" 利用中のプラグインをPlugin
+Plugin 'gmarik/vundle'
+"Plugin 'Shougo/neocomplcache'
+Plugin 'neoclide/coc.nvim'
+Plugin 'Shougo/unite.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-abolish'
+Plugin 'tomasr/molokai'
+"Plugin 'thinca/vim-puickrun'
+Plugin 'thinca/vim-ref'
+Plugin 'kana/vim-fakeclip'
+Plugin 'depuracao/vim-rdoc'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
 "
 " for jedi-vim
-Bundle 'davidhalter/jedi-vim'
-Bundle 'jmcantrell/vim-virtualenv'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'jmcantrell/vim-virtualenv'
 
 " http://qiita.com/PSP_T/items/3a1af1301ee197b32a8a
-Bundle 'osyo-manga/vim-over'
-Bundle 'LeafCage/yankround.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'syui/wauto.vim'
+Plugin 'osyo-manga/vim-over'
+Plugin 'LeafCage/yankround.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'syui/wauto.vim'
 
 set spell
 set tabstop=4
